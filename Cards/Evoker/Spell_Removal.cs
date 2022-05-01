@@ -20,7 +20,7 @@ namespace Wizardry.Cards.Evoker
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             ModdingUtils.Extensions.CardInfoExtension.GetAdditionalData(cardInfo).canBeReassigned = false;
-            base.SetupCard(cardInfo, gun, cardStats, statModifiers);
+            base.SetupCard(cardInfo, gun, cardStats, statModifiers, block);
             className.className = EvokerClass.name;
         }
 
@@ -59,7 +59,7 @@ namespace Wizardry.Cards.Evoker
         {
             try
             {
-                Wizardry.instance.Evoker_Removal_Shop = ShopManager.instance.CreateShop("Evoker_Rmoval");
+                Wizardry.instance.Evoker_Removal_Shop = ShopManager.instance.CreateShop("Evoker_Removal");
                 Wizardry.instance.Evoker_Removal_Shop.UpdateTitle("Card Removal");
                 Wizardry.instance.Evoker_Removal_Shop.UpdateMoneyColumnName("");
             }

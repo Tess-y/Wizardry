@@ -13,7 +13,7 @@ namespace Wizardry.Cards.Evoker
         public static CardInfo card;
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
-            base.SetupCard(cardInfo, gun, cardStats, statModifiers);
+            base.SetupCard(cardInfo, gun, cardStats, statModifiers, block);
             className.className = EvokerClass.name;
         }
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)

@@ -12,20 +12,20 @@ using Wizardry.Spells.Evoker;
 
 namespace Wizardry.Cards.Evoker
 {
-    internal class Defencive_Magics : Template
+    internal class Defensive_Magics : Template
     {
         public static CardInfo card;
-        public static Spell[] chaossMagicsBooster = new Spell[] { new Healling_Shard(), new Smite(), new Bullet_Shield() };
+        public static Spell[] defensiveMagicsBooster = new Spell[] { new Healling_Shard(), new Smite(), new Bullet_Shield() };
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             ModdingUtils.Extensions.CardInfoExtension.GetAdditionalData(cardInfo).canBeReassigned = false;
-            base.SetupCard(cardInfo, gun, cardStats, statModifiers);
+            base.SetupCard(cardInfo, gun, cardStats, statModifiers, block);
             className.className = EvokerClass.name;
         }
 
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
-            var pack = chaossMagicsBooster.ToArray();
+            var pack = defensiveMagicsBooster.ToArray();
             pack.Shuffle();
             characterStats.GetAdditionalData().Evoker_Spells_To_Add.Add(pack[0]);
             base.OnAddCard(player, gun, gunAmmo, data, health, gravity, block, characterStats);
@@ -39,7 +39,7 @@ namespace Wizardry.Cards.Evoker
 
         protected override string GetDescription()
         {
-            return "Get a spell from the Defencive Magics booster pack";
+            return "Get a spell from the Defensive Magics booster pack";
         }
 
         protected override CardInfo.Rarity GetRarity()

@@ -12,20 +12,20 @@ using Wizardry.Spells.Evoker;
 
 namespace Wizardry.Cards.Evoker
 {
-    internal class Chaoss_Magics : Template
+    internal class Chaos_Magics : Template
     {
         public static CardInfo card;
-        public static Spell[] chaossMagicsBooster = new Spell[] { new Fling(), new Mass_Panic() };
+        public static Spell[] chaosMagicsBooster = new Spell[] { new Fling(), new Mass_Panic() };
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             ModdingUtils.Extensions.CardInfoExtension.GetAdditionalData(cardInfo).canBeReassigned = false;
-            base.SetupCard(cardInfo, gun, cardStats, statModifiers);
+            base.SetupCard(cardInfo, gun, cardStats, statModifiers, block);
             className.className = EvokerClass.name;
         }
 
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
-            var pack = chaossMagicsBooster.ToArray();
+            var pack = chaosMagicsBooster.ToArray();
             pack.Shuffle();
             characterStats.GetAdditionalData().Evoker_Spells_To_Add.Add(pack[0]);
             base.OnAddCard(player, gun, gunAmmo, data, health, gravity, block, characterStats);
@@ -39,7 +39,7 @@ namespace Wizardry.Cards.Evoker
 
         protected override string GetDescription()
         {
-            return "Get a spell from the Chaoss Magics booster pack";
+            return "Get a spell from the Chaos Magics booster pack";
         }
 
         protected override CardInfo.Rarity GetRarity()
