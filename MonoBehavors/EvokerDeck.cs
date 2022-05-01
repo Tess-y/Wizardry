@@ -69,11 +69,10 @@ namespace Wizardry.MonoBehavors
             spellDeck.Clear();
             foreach (var _ in player.data.currentCards.Where(c => c==Evoker.card))
             {
-                spellDeck.Add(new Bullet_Shield());/*
                 spellDeck.Add(new Poke());
                 spellDeck.Add(new Poke());
                 spellDeck.Add(new Poke());
-                spellDeck.Add(new Healling_Shard());*/
+                spellDeck.Add(new Healling_Shard());
             }
             foreach (var _ in player.data.currentCards.Where(c => c==Rebirth_Magics.card))
             {

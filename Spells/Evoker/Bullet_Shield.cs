@@ -36,7 +36,7 @@ namespace Wizardry.Spells.Evoker
             newGun.projectiles = new ProjectilesToSpawn[] { gun.projectiles[0] };
             newGun.gravity = 0;
             newGun.projectielSimulatonSpeed = 0.1f;
-            newGun.projectileColor = new Color(255 / 255f, 1 / 255f, 1 / 255f);
+            newGun.projectileColor = new Color(30 / 255f, 200 / 255f, 255 / 255f);
             effect.SetGun(newGun);
         }
 

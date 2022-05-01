@@ -25,7 +25,7 @@ namespace Wizardry
         internal static ConfigEntry<bool> DEBUG;
         internal const string ModId = "root.rounds.wizardy";
         internal const string ModName = "Wizardry";
-        public const string Version = "1.0.0";
+        public const string Version = "0.1.0";
         public Shop Evoker_Removal_Shop;
         public static Wizardry instance { get; private set; }
 
@@ -47,6 +47,7 @@ namespace Wizardry
             CustomCard.BuildCard<Faster_Casting>(c => Faster_Casting.card = c);
             CustomCard.BuildCard<Chaoss_Magics>(c => Chaoss_Magics.card = c);
             CustomCard.BuildCard<Spell_Removal>(c => Spell_Removal.card = c);
+            CustomCard.BuildCard<Defencive_Magics>(c => Defencive_Magics.card = c);
 
             EvokerSpells.spells.Add(new Bottled_Phoenix().GetName(), new Bottled_Phoenix());
             EvokerSpells.spells.Add(new Healling_Shard().GetName(), new Healling_Shard());
