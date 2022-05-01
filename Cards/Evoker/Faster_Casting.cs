@@ -9,7 +9,7 @@ namespace Wizardry.Cards.Evoker
     internal class Faster_Casting : Template
     {
         public static CardInfo card;
-        public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers)
+        public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             gun.damage = 0.85f;
             base.SetupCard(cardInfo, gun, cardStats, statModifiers);

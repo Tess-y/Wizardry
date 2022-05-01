@@ -25,7 +25,7 @@ namespace Wizardry
         internal static ConfigEntry<bool> DEBUG;
         internal const string ModId = "root.rounds.wizardy";
         internal const string ModName = "Wizardry";
-        public const string Version = "0.1.0";
+        public const string Version = "0.1.2";
         public Shop Evoker_Removal_Shop;
         public static Wizardry instance { get; private set; }
 

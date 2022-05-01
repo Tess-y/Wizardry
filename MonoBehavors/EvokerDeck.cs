@@ -76,8 +76,8 @@ namespace Wizardry.MonoBehavors
             }
             foreach (var _ in player.data.currentCards.Where(c => c==Rebirth_Magics.card))
             {
-                player.gameObject.GetOrAddComponent<EvokerDeck>().spellDeck.Add(new Bottled_Phoenix());
-                player.gameObject.GetOrAddComponent<EvokerDeck>().spellDeck.Add(new Bottled_Phoenix());
+                spellDeck.Add(new Bottled_Phoenix());
+                spellDeck.Add(new Bottled_Phoenix());
             }
 
             foreach (Spell spell in player.data.stats.GetAdditionalData().Evoker_Spells_To_Add)

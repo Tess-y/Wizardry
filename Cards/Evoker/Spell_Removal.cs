@@ -17,7 +17,7 @@ namespace Wizardry.Cards.Evoker
     internal class Spell_Removal : Template
     {
         public static CardInfo card;
-        public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers)
+        public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             ModdingUtils.Extensions.CardInfoExtension.GetAdditionalData(cardInfo).canBeReassigned = false;
             base.SetupCard(cardInfo, gun, cardStats, statModifiers);

@@ -9,7 +9,7 @@ namespace Wizardry.Cards.Evoker
     internal class Auto_Shuffler : Template
     {
         public static CardInfo card;
-        public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers)
+        public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             base.SetupCard(cardInfo, gun, cardStats, statModifiers);
             className.className = EvokerClass.name;

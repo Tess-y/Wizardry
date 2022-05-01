@@ -16,7 +16,7 @@ namespace Wizardry.Cards.Evoker
     {
         public static CardInfo card;
         public static Spell[] chaossMagicsBooster = new Spell[] { new Healling_Shard(), new Smite(), new Bullet_Shield() };
-        public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers)
+        public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             ModdingUtils.Extensions.CardInfoExtension.GetAdditionalData(cardInfo).canBeReassigned = false;
             base.SetupCard(cardInfo, gun, cardStats, statModifiers);
