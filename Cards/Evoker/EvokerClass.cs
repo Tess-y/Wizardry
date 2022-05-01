@@ -12,6 +12,13 @@ namespace Wizardry.Cards.Evoker
 
         public override IEnumerator Init()
         {
+            while(!(Evoker.card && Auto_Shuffler.card && Rebirth_Magics.card && Faster_Casting.card && Chaoss_Magics.card && Spell_Removal.card)) yield return null;
+            ClassesRegistry.Register(Evoker.card, CardType.Entry, 1);
+            ClassesRegistry.Register(Auto_Shuffler.card, (CardType)0x16, Evoker.card, 1);
+            ClassesRegistry.Register(Rebirth_Magics.card, (CardType)0x16, Evoker.card, 1);
+            ClassesRegistry.Register(Faster_Casting.card, (CardType)0x16, Evoker.card, 3);
+            ClassesRegistry.Register(Chaoss_Magics.card, (CardType)0x16, Evoker.card);
+            ClassesRegistry.Register(Spell_Removal.card, (CardType)0x16, Evoker.card);
             yield break;
         }
 

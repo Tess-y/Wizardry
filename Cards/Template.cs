@@ -4,12 +4,13 @@ using System.Text;
 using UnboundLib.Cards;
 using ClassesManagerReborn.Util;
 using UnboundLib;
+using Wizardry.MonoBehavors;
 
 namespace Wizardry.Cards
 {
     public abstract class Template : CustomCard
     {
-        ClassNameMono className;
+        internal ClassNameMono className;
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             className = gameObject.GetOrAddComponent<ClassNameMono>();
@@ -18,6 +19,7 @@ namespace Wizardry.Cards
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
 
+            if (player.GetComponent<EvokerDeck>()) Wizardry.instance.ExecuteAfterFrames(2, () => player.GetComponent<EvokerDeck>().UpdateDeck());
             Wizardry.Debug($"Card {GetTitle()} has been added to player {player.playerID}");
         }
         public override void OnRemoveCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)

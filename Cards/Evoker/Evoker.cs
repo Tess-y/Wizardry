@@ -10,14 +10,17 @@ namespace Wizardry.Cards.Evoker
 {
     public class Evoker : Template
     {
+        public static CardInfo card;
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
             EvokerDeck deck = player.gameObject.GetOrAddComponent<EvokerDeck>();
-            deck.spellDeck.Add(new Poke());
-            deck.spellDeck.Add(new Poke());
-            deck.spellDeck.Add(new Poke());
-            deck.spellDeck.Add(new Healling_Shard());
-            deck.spellDeck.Add(new Smite());
+            base.OnAddCard(player, gun, gunAmmo, data, health, gravity, block, characterStats);
+        }
+
+        public override void OnRemoveCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
+        {
+            Destroy(player.gameObject.GetComponent<EvokerDeck>());
+            base.OnRemoveCard(player, gun, gunAmmo, data, health, gravity, block, characterStats);
         }
 
         protected override GameObject GetCardArt()
@@ -27,7 +30,7 @@ namespace Wizardry.Cards.Evoker
 
         protected override string GetDescription()
         {
-            return "Utilizing chaos magic, the Evoker casts from a deck of spells.";
+            return "Utilizing chaos magic, the Evoker casts from a deck of spells.\n (Press Q to shuffle and E to cast)";
         }
 
         protected override CardInfo.Rarity GetRarity()

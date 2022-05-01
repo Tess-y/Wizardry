@@ -22,8 +22,8 @@ namespace Wizardry.Patches
                 {
                     Wizardry.Debug("SpellBind1 WasPressed");
                 }
-                if (__instance.GetComponent<EvokerDeck>() != null) {
-                    if (__instance.GetComponent<CharacterData>().playerActions.GetAdditionalData().SpellBind1.WasPressed)
+                if (__instance.GetComponent<EvokerDeck>() != null && __instance.GetComponent<EvokerDeck>().enabled) {
+                    if (__instance.GetComponent<CharacterData>().playerActions.GetAdditionalData().SpellBind1.WasPressed && !__instance.GetComponent<CharacterData>().stats.GetAdditionalData().Evoker_AutoShuffle)
                     {
                         __instance.GetComponent<EvokerDeck>().ShuffleDeck();
                     }
